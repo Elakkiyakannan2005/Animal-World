@@ -1,0 +1,74 @@
+[
+  {
+    "model": "animals.animal",
+    "pk": 1,
+    "fields": {
+      "name": "Lion",
+      "emoji": "🦁",
+      "image_url": "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=600&q=80",
+      "short_description": "Lions are powerful wild animals known as the kings of the jungle.",
+      "full_description": "Lions are social wild cats. They live mainly in groups called prides.",
+      "order": 1
+    }
+  },
+  {
+    "model": "animals.animal",
+    "pk": 2,
+    "fields": {
+      "name": "Tiger",
+      "emoji": "🐯",
+      "image_url": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=600&q=80",
+      "short_description": "Tigers are strong and beautiful wild cats with unique stripes.",
+      "full_description": "Tigers are the largest members of the cat family and are known for their stripes.",
+      "order": 2
+    }
+  },
+  {
+    "model": "animals.animal",
+    "pk": 3,
+    "fields": {
+      "name": "Elephant",
+      "emoji": "🐘",
+      "image_url": "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=600&q=80",
+      "short_description": "Elephants are the largest land animals and are highly intelligent.",
+      "full_description": "Elephants are intelligent mammals and are the largest land animals.",
+      "order": 3
+    }
+  },
+  {
+    "model": "animals.animal",
+    "pk": 4,
+    "fields": {
+      "name": "Giraffe",
+      "emoji": "🦒",
+      "image_url": "https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=600&q=80",
+      "short_description": "Giraffes are famous for their long necks and tall bodies.",
+      "full_description": "Giraffes are the tallest land animals and use their long necks to reach leaves.",
+      "order": 4
+    }
+  },
+  {
+    "model": "animals.animal",
+    "pk": 5,
+    "fields": {
+      "name": "Panda",
+      "emoji": "🐼",
+      "image_url": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=600&q=80",
+      "short_description": "Giant pandas are known for their black and white fur and love for bamboo.",
+      "full_description": "Giant pandas mainly eat bamboo and are known for their distinctive black and white fur.",
+      "order": 5
+    }
+  },
+  {
+    "model": "animals.animal",
+    "pk": 6,
+    "fields": {
+      "name": "Dog",
+      "emoji": "🐶",
+      "image_url": "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80",
+      "short_description": "Dogs are friendly, intelligent and loyal companions.",
+      "full_description": "Dogs are intelligent and social animals that have lived alongside humans for thousands of years.",
+      "order": 6
+    }
+  }
+]

@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animal World</title>
+
+    <link rel="stylesheet" href="{% static 'animals/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">🐾 Animal World</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#animals">Animals</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <p class="small-title">WELCOME TO</p>
+
+            <h1>Explore the <span>Animal World</span></h1>
+
+            <p>
+                Discover amazing animals, learn interesting facts,
+                and explore the beautiful world of wildlife.
+            </p>
+
+            <a href="#animals" class="explore-btn">
+                Explore Animals 🐾
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- Animals Section -->
+    <section class="animals-section" id="animals">
+
+        <div class="section-title">
+            <p>DISCOVER</p>
+            <h2>Meet Our Animals 🐾</h2>
+            <span>Learn something interesting about every animal.</span>
+        </div>
+
+
+        <!-- Search -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search an animal..."
+            >
+        </div>
+
+
+        <!-- Animal Cards: now rendered from the database via Django -->
+        <div class="animal-container" id="animalContainer">
+            {% for animal in animals %}
+            <div class="animal-card" data-id="{{ animal.id }}">
+                <img
+                    src="{{ animal.image_url }}"
+                    alt="{{ animal.name }}"
+                >
+
+                <div class="card-content">
+                    <h3>{{ animal.emoji }} {{ animal.name }}</h3>
+                    <p>
+                        {{ animal.short_description }}
+                    </p>
+
+                    <button class="learn-more-btn" data-id="{{ animal.id }}">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            {% empty %}
+            <p>No animals yet. Add some in the Django admin!</p>
+            {% endfor %}
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <div>
+            <p>ABOUT US</p>
+            <h2>Learn. Explore. Love Animals. ❤️</h2>
+
+            <p>
+                Animal World is a simple educational website designed
+                to help everyone discover interesting facts about
+                animals and wildlife.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>🐾 Animal World © 2026 | Made with ❤️</p>
+    </footer>
+
+
+    <!-- Learn More modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 id="modalTitle"></h3>
+            <p id="modalText"></p>
+        </div>
+    </div>
+
+
+    <script>
+        // Tell script.js where the Django API endpoints live.
+        window.API_SEARCH_URL = "{% url 'api_search' %}";
+        window.API_ANIMAL_DETAIL_BASE = "{% url 'api_animal_detail' 0 %}".replace('0/', '');
+    </script>
+    <script src="{% static 'animals/script.js' %}"></script>
+
+</body>
+</html>
